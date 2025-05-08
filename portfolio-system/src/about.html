@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #1e1e1e;
+        padding: 15px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+
+      .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: #4caf50;
+        transition: 0.3s;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #4caf50;
+        font-size: 1.2em;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      nav ul li a:hover,
+      nav ul li a.active {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      section {
+        padding-top: 80px;
+        flex: 1;
+      }
+
+      .about-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 50px;
+        padding: 50px;
+        flex-wrap: wrap;
+      }
+
+      footer {
+        background-color: #1e1e1e;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .social-icons a {
+        color: #4caf50;
+        font-size: 24px;
+        margin: 0 15px;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: white;
+      }
+
+      .skills-link {
+        display: block;
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .skills-link a {
+        color: #4caf50;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.2em;
+        border: 2px solid #4caf50;
+        padding: 10px 20px;
+        border-radius: 8px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .skills-link a:hover {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+
+        nav ul {
+          flex-direction: column;
+          display: none;
+          background-color: #1e1e1e;
+          position: absolute;
+          top: 60px;
+          width: 100%;
+          left: 0;
+          padding: 20px 0;
+          gap: 10px;
+          text-align: center;
+        }
+
+        nav ul.show {
+          display: flex;
+        }
+
+        .about-content {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        nav ul li a {
+          font-size: 1em;
+          padding: 5px 10px;
+        }
+
+        .social-icons a {
+          font-size: 20px;
+          margin: 0 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Me</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-content">
+      <!-- Picture Section -->
+      <div>
+        <img
+          src="assets/images/glennybanez2.jpg"
+          alt="Glenn Ybañez"
+          style="
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #4caf50;
+          "
+        />
+      </div>
+
+      <!-- Text Section -->
+      <div style="max-width: 600px">
+        <h1
+          style="
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: rgb(255, 255, 255);
+          "
+        >
+          About Me
+        </h1>
+        <p style="font-size: 1.2em; line-height: 1.8; color: #ccc">
+          Hello, I'm Glenn Ybañez, a 22-year-old student pursuing a bachelor's
+          degree in Information Technology and I am from Cabancalan, Mandaue
+          City. I'm enthusiastic about developing responsive websites, learning
+          new technologies, and honing my craft.
+          <br /><br />
+          I'm just a guy that likes to hang out with friends and play games
+          while I'm not in school. I think it's important to strike a balance
+          between enjoyment and responsibilities, and I work hard every day to
+          improve myself and be a better student.
+          <br /><br />
+          This portfolio provides an overview of my development and tech
+          journey. Thanks for checking it out!
+        </p>
+        <div class="skills-link">
+          <a href="skills.html">View My Full Skills</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer with Social Icons -->
+    <footer>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/glennzenaby" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com/glinsho_/" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="mailto:glennybanez2@gmail.com" title="Email me"
+          ><i class="fas fa-envelope"></i
+        ></a>
+        <a href="tel:09310195337" title="Call me"
+          ><i class="fas fa-phone"></i
+        ></a>
+      </div>
+      <p style="color: #888; margin-top: 10px">© 2025 Glenn Ybañez</p>
+    </footer>
+
+    <!-- JavaScript for Hamburger Toggle -->
+    <script>
+      function toggleMenu() {
+        const nav = document.getElementById("nav-links");
+        nav.classList.toggle("show");
+      }
+
+      // Close menu on link click (mobile UX)
+      document.querySelectorAll("#nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("nav-links").classList.remove("show");
+        });
+      });
+    </script>
+  </body>
+</html>

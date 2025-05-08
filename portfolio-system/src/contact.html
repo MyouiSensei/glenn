@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #1e1e1e;
+        padding: 15px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+
+      .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: #4caf50;
+        transition: 0.3s;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #4caf50;
+        font-size: 1.2em;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      nav ul li a:hover,
+      nav ul li a.active {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      section {
+        padding-top: 100px;
+        flex: 1;
+      }
+
+      footer {
+        background-color: #1e1e1e;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .social-icons a {
+        color: #4caf50;
+        font-size: 1.5em;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: white;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+
+        nav ul {
+          flex-direction: column;
+          display: none;
+          background-color: #1e1e1e;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          padding: 20px 0;
+          text-align: center;
+          gap: 10px;
+        }
+
+        nav ul.show {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contact Section -->
+    <section
+      style="
+        min-height: 100vh;
+        background-color: #121212;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+      "
+    >
+      <div
+        style="
+          width: 100%;
+          max-width: 600px;
+          background-color: #1e1e1e;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        "
+      >
+        <h1 style="text-align: center; font-size: 2.5em; color: #ffffff">
+          Contact Me
+        </h1>
+        <p style="text-align: center; color: #ccc; font-size: 1.2em">
+          Have any questions or want to work together? Feel free to send me a
+          message!
+        </p>
+
+        <form
+          action="https://formspree.io/f/xgvkyenn"
+          method="POST"
+          style="display: flex; flex-direction: column; gap: 20px"
+        >
+          <div style="display: flex; flex-direction: column">
+            <label for="name" style="color: #ccc">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              style="
+                padding: 10px;
+                border: 1px solid #4caf50;
+                border-radius: 5px;
+                background-color: #2a2a2a;
+                color: white;
+              "
+            />
+          </div>
+          <div style="display: flex; flex-direction: column">
+            <label for="email" style="color: #ccc">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              style="
+                padding: 10px;
+                border: 1px solid #4caf50;
+                border-radius: 5px;
+                background-color: #2a2a2a;
+                color: white;
+              "
+            />
+          </div>
+          <div style="display: flex; flex-direction: column">
+            <label for="message" style="color: #ccc">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              style="
+                padding: 10px;
+                border: 1px solid #4caf50;
+                border-radius: 5px;
+                background-color: #2a2a2a;
+                color: white;
+                height: 150px;
+              "
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            style="
+              padding: 10px 20px;
+              font-size: 1.2em;
+              background-color: #4caf50;
+              color: white;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+            "
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/glennzenaby" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com/glinsho_/" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="mailto:glennybanez2@gmail.com"
+          ><i class="fas fa-envelope"></i
+        ></a>
+        <a href="tel:09310195337"><i class="fas fa-phone"></i></a>
+      </div>
+      <p style="color: #888; margin-top: 10px">© 2025 Glenn Ybañez</p>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const nav = document.getElementById("nav-links");
+        nav.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

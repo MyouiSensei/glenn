@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 2 - My Portfolio</title>
+    <meta name="description" content="Project 2 by Glenn Ybañez" />
+    <meta name="author" content="Glenn Ybañez" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #1e1e1e;
+        padding: 15px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+
+      .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: #4caf50;
+        transition: 0.3s;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #4caf50;
+        font-size: 1.2em;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      nav ul li a:hover,
+      nav ul li a.active {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      section {
+        padding: 100px 20px 60px;
+        text-align: center;
+      }
+
+      section h1 {
+        font-size: 3em;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #4caf50;
+      }
+
+      section p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        color: #ccc;
+        margin-bottom: 40px;
+      }
+
+      section img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+          position: absolute;
+          top: 20px;
+          right: 20px;
+        }
+
+        nav ul {
+          flex-direction: column;
+          display: none;
+          background-color: #1e1e1e;
+          position: absolute;
+          top: 60px;
+          width: 100%;
+          left: 0;
+          padding: 20px 0;
+          gap: 10px;
+          text-align: center;
+        }
+
+        nav ul.show {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Project Sections -->
+    <section>
+      <h1>EMPLOYEES LIST</h1>
+      <p>Here you can enter your information or data about you.</p>
+      <img src="assets/images/project2.jpg" alt="Employees List" />
+    </section>
+
+    <section>
+      <p>
+        This part is where you can see the employees list and you can also edit
+        the data of the employees.
+      </p>
+      <img src="assets/images/project2-2.jpg" alt="Editable Employee Data" />
+    </section>
+
+    <section>
+      <p>
+        This part is a gender chart where you can see how many genders are
+        present in the employee list.
+      </p>
+      <img src="assets/images/project2-3.jpg" alt="Gender Chart" />
+    </section>
+
+    <!-- JS for Hamburger -->
+    <script>
+      function toggleMenu() {
+        const nav = document.getElementById("nav-links");
+        nav.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
